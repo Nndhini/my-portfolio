@@ -1,0 +1,435 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #F6EFA7; /* Background color */
+}
+
+header {
+    background: linear-gradient(135deg, #FF7F8C, #F6EFA7); /* Lighter gradient header background */
+    padding: 20px;
+    text-align: center;
+    color: #0d0b0b; /* Text color in the header */
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: center;
+}
+
+.header-text {
+    margin-top: 10px;
+}
+
+.header-text h1 {
+    font-size: 2em;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.header-text p {
+    font-size: 1.2em;
+    color: #0a0909; /* Text color in header text */
+}
+
+.icons {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    align-items: center; /* Center icons vertically if needed */
+    gap: 20px; /* Space between icons */
+    margin-top: 20px; /* Space above icons */
+}
+
+/* Icon Styles */
+.icon-link {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-link img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+}
+
+/* Popup Effect */
+.icon-link:hover {
+    transform: scale(1.2); /* Enlarge icon on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+.icon-link::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140%;
+    height: 140%;
+    background: rgba(255, 0, 120, 0.1); /* Light pink overlay */
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.icon-link:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Navigation */
+nav {
+    background: linear-gradient(135deg, #FF7F8C, #F6EFA7);/* Lighter gradient navigation background */
+    color: #fffefe;
+    padding: 10px;
+    position: top;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.3em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: white; /* Hover color for navigation links */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    background: #faf8f8; /* White background for main content */
+}
+
+section {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #ddd; /* Line after each section */
+    padding-bottom: 20px; /* Space between content and line */
+    position: relative; /* For popup effect */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    background: linear-gradient(135deg, #FF7F8C, #F6EFA7); /* Lighter gradient background */
+}
+
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Popup Effect for Sections */
+section:hover {
+    transform: scale(1.05); /* Enlarge section on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 120, 0.05); /* Light pink overlay */
+    z-index: 0;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+section:hover::before {
+    opacity: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project-details {
+    margin-top: 10px;
+}
+
+.project-details ul {
+    padding-left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .header-text h1 {
+        font-size: 1.5em;
+    }
+
+    .header-text p {
+        font-size: 1em;
+    }
+
+    .icons img {
+        width: 25px;
+        height: 25px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-text h1 {
+        font-size: 1.2em;
+    }
+
+    .header-text p {
+        font-size: 0.9em;
+    }
+
+    .icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .project-details ul {
+        padding-left: 15px;
+    }
+}
+
+/* Skills Section */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill {
+    flex: 1;
+    min-width: calc(50% - 20px); /* Adjust width for two columns */
+    background-color:antiquewhite; /* White background for skills */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill h3 {
+    margin-top: 0;
+}
+
+.skill ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill ul li {
+    margin-bottom: 10px;
+}
+
+/* Popup Effect */
+.skill:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+.skill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 120, 0.1); /* Light pink overlay */
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.skill:hover::after {
+    transform: scaleY(1);
+}
+
+/* Projects Section */
+.project {
+    background-color:antiquewhite; /* Lighter background for projects */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Two-Column Layout */
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-item {
+    flex: 1;
+    min-width: calc(50% - 20px); /* Adjust width for two columns */
+}
+
+/* Popup Effect */
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+.project::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 120, 0.05); /* Light pink overlay */
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.project:hover::after {
+    transform: scaleY(1);
+}
+
+/* Icons Container */
+.icons {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    align-items: center; /* Center icons vertically if needed */
+    gap: 20px; /* Space between icons */
+    margin-top: 20px; /* Space above icons */
+}
+
+/* Icon Styles */
+.icon-link {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-link img {
+    width: 45px; /* Adjust size as needed */
+    height: 45px; /* Adjust size as needed */
+}
+
+/* Popup Effect */
+.icon-link:hover {
+    transform: scale(1.2); /* Enlarge icon on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+.icon-link::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140%;
+    height: 140%;
+    background: rgba(255, 0, 120, 0.1); /* Light pink overlay */
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.contact-icons {
+    list-style-type: circle;
+    padding: 0;
+    margin-top: 0;
+}
+
+.contact-icons li {
+    display:-webkit-flex;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.contact-icons img {
+    margin-right: 15px;
+    width: 30px; /* Adjust the size as needed */
+    height: 30px; /* Adjust the size as needed */
+}
+
+.contact-icons img:hover {
+    transform: scale(1.2); /* Scale up on hover */
+}
+
+footer {
+    text-align: center; /* Center text horizontally */
+    padding: 20px;
+    background: linear-gradient(135deg, #FF7F8C, #F6EFA7); ; /* Light background for footer */
+    color: #000; /* Dark text color for footer */
+}
+
+footer p {
+    margin: 0;
+}
